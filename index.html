@@ -28,7 +28,7 @@
     </div>
   
     <div class="buttons">
-      <button id="spinner">Spin</button>
+      <button id="spinner" onmousedown="sound1.play()" class="btn">Spin</button>
       <button id="reseter">Reset</button>
     </div>
   
@@ -36,6 +36,11 @@
   </div>
 
   <script src="./script.js"></script>
+
+<script>
+    var sound1 = new Audio();
+    sound1.src = "./sound1.mp3"
+</script>
   
 </body>
 
