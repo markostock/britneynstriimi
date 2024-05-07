@@ -3,14 +3,19 @@
 
 /* Kuvakkeet */
 
-  const items = [
+  var items = [
 
-//Häviökuvakkeet
-    "🍬","🍭","🍰","🍧",
-//5min voice changer 200/1000 (20%)
-    "🎙️","🎙️","🎙️","🎙️","🎙️",
-// 12h striimi 1/1000 (0,1%)
-    "🏆",
+//Todennäköisimmät
+    "🎙️","🎙️","🎙️","🎙️",
+//Harvinaisemmat
+    "🍄", "🍄", "🍄",
+//peruukki pois 30min+1h
+    "🪮",
+//Striimin pidennykset (12h+1h)
+    "⌛",
+//Lamps 4 makeup 1/1 000
+    "💡",
+
   ];
 
 // Ydinkoodi
@@ -81,7 +86,7 @@
         box.textContent = pool[i];
         boxesClone.appendChild(box);
       }
-      boxesClone.style.transitionDuration = `${duration > 0 ? duration : 1}s`;
+      boxesClone.style.transitionDuration = `${duration > 0 ? duration : 900000}s`;
       boxesClone.style.transform = `translateY(-${
         door.clientHeight * (pool.length - 1)
       }px)`;
