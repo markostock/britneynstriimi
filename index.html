@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <title>Slottipeli</title>
 </head>
 
@@ -28,15 +29,16 @@
     </div>
   
     <div class="buttons">
-      <button id="spinner" onmousedown="sound1.play()" class="btn">Spin</button>
-      <button id="reseter">Reset</button>
+      <input type="image" id="spinner" onmousedown="sound1.play()" class="btn" src="./spin.png" onmouseover="this.src='./buttonover.png';"  onmouseout="this.src='./spin.png';"></button>
     </div>
+
+    <button id="reseter" class="btn" hidden>Soft reset</button>
+    <button onClick="window.location.reload();">Reset</button>
   
     <p class="info"></p>
   </div>
 
   <script src="./script.js"></script>
-
 <script>
     var sound1 = new Audio();
     sound1.src = "./sound1.mp3"
