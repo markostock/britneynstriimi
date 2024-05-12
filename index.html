@@ -11,6 +11,17 @@
 <body>
 
   <div id="app">
+    <div class="container" style="margin-bottom: 20px;">
+      <div class="dice">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+        <div class="face right"></div>
+        <div class="face left"></div>
+      </div>
+    </div>
+    
     <div class="doors">
       <div class="door">
         <div class="boxes">
@@ -23,13 +34,16 @@
       </div>
   
       <div class="door">
-        <div class="boxes">
+        <div class="boxes" onclick="myFunc()">
         </div>
       </div>
+
     </div>
   
     <div class="buttons">
-      <input type="image" id="spinner" onmousedown="sound1.play()" class="btn" src="./spin.png" onmouseover="this.src='./buttonover.png';"  onmouseout="this.src='./spin.png';"></button>
+      <input type="image" style="max-width: 75px; max-height: 75px;" id="spinner" onmousedown="sound1.play()" class="btn" src="./spin.png" onmouseover="this.src='./buttonover.png';"  onmouseout="this.src='./spin.png';"></input>
+      <input type="image" style="max-width: 75px; max-height: 75px;" onmousedown="sound2.play()" class="roll" src="./dice.png" onmouseover="this.src='./buttonover.png';" onmouseout="this.src='./dice.png';"></input>
+      
     </div>
 
     <button id="reseter" class="btn" hidden>Soft reset</button>
@@ -42,8 +56,30 @@
 <script>
     var sound1 = new Audio();
     sound1.src = "./sound1.mp3"
+
+    var sound2 = new Audio();
+    sound2.src = "./sound2.mp3"
+
+
 </script>
   
+<!-- Vaihda ikkunanväriä -->
+<!--
+<script>
+
+        let result = document.getElementById("GFG");
+ 
+        function changeColor(color) {
+            document.body.style.background = color;
+        }
+ 
+        function myFunc() {
+            changeColor('yellow');
+            result.innerHTML = "Background Color changed";
+        }    
+        
+</script>
+-->
 </body>
 
 </html>
