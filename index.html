@@ -24,17 +24,18 @@
     
     <div class="doors">
       <div class="door">
-        <div class="boxes">
+        <div class="boxes" id="left">
         </div>
       </div>
   
       <div class="door">
-        <div class="boxes">
+        <div class="boxes" id="center">
         </div>
       </div>
   
       <div class="door">
-        <div class="boxes" onclick="myFunc()">
+        <!-- onclick="myFunc()" -->
+        <div class="boxes" id="right">
         </div>
       </div>
 
@@ -42,7 +43,7 @@
   
     <div class="buttons">
       <input type="image" style="max-width: 75px; max-height: 75px;" id="spinner" onmousedown="sound1.play()" class="btn" src="./spin.png" onmouseover="this.src='./buttonover.png';"  onmouseout="this.src='./spin.png';"></input>
-      <input type="image" style="max-width: 75px; max-height: 75px;" onmousedown="sound2.play()" class="roll" src="./dice.png" onmouseover="this.src='./buttonover.png';" onmouseout="this.src='./dice.png';"></input>
+      <input type="image" style="max-width: 75px; max-height: 75px;" id="dice" onmousedown="sound2.play()" class="roll" src="./dice.png" onmouseover="this.src='./buttonover.png';" onmouseout="this.src='./dice.png';"></input>
       
     </div>
 
@@ -53,21 +54,19 @@
   </div>
 
   <script src="./script.js"></script>
+
 <script>
-    var sound1 = new Audio();
+    let sound1 = new Audio();
     sound1.src = "./sound1.mp3"
 
-    var sound2 = new Audio();
+    let sound2 = new Audio();
     sound2.src = "./sound2.mp3"
 
-
 </script>
-  
-<!-- Vaihda ikkunanväriä -->
-<!--
+
 <script>
 
-        let result = document.getElementById("GFG");
+        let result = document.getElementById("right");
  
         function changeColor(color) {
             document.body.style.background = color;
@@ -79,7 +78,7 @@
         }    
         
 </script>
--->
+
 </body>
 
 </html>
