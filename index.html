@@ -8,10 +8,34 @@
   <title>Slottipeli</title>
 </head>
 
+<style>
+
+.container {
+background: transparent;
+display: grid;
+}
+</style>
+
 <body>
 
   <div id="app">
-    <div class="container" style="margin-bottom: 20px;">
+
+<!--kolikko-->
+
+<div class="container">
+  <div class="coin" id="coin">
+      <div class="heads">
+          <img src="star.png">
+      </div>
+      <div class="tails">
+          <img src="moon.png">
+      </div>
+  </div>
+</div>
+
+<!--noppa--> 
+
+    <div class="container" style="margin-top: 30px; margin-bottom: 20px;">
       <div class="dice">
         <div class="face front"></div>
         <div class="face back"></div>
@@ -21,31 +45,41 @@
         <div class="face left"></div>
       </div>
     </div>
-    
+
+<!--slotti-->
+
+<!--slotti 1-->
     <div class="doors">
       <div class="door">
         <div class="boxes" id="left">
         </div>
       </div>
-  
+
+<!--slotti 2-->
       <div class="door">
         <div class="boxes" id="center">
         </div>
       </div>
   
+<!--slotti 3-->      
       <div class="door">
-        <!-- onclick="myFunc()" -->
         <div class="boxes" id="right">
         </div>
       </div>
 
     </div>
-  
+
+<!--nappulat-->
+
     <div class="buttons">
+      
+      <input type="image" style="max-width: 75px; max-height: 75px; margin-right: 8px;" id="flip-button" class="btn" onmousedown="sound3.play()" src="./coin.png" onmouseover="this.src='./buttonover.png';"  onmouseout="this.src='./coin.png';"></input>
       <input type="image" style="max-width: 75px; max-height: 75px;" id="spinner" onmousedown="sound1.play()" class="btn" src="./spin.png" onmouseover="this.src='./buttonover.png';"  onmouseout="this.src='./spin.png';"></input>
       <input type="image" style="max-width: 75px; max-height: 75px;" id="dice" onmousedown="sound2.play()" class="roll" src="./dice.png" onmouseover="this.src='./buttonover.png';" onmouseout="this.src='./dice.png';"></input>
       
     </div>
+
+<!--resetointi-->
 
     <button id="reseter" class="btn" hidden>Soft reset</button>
     <button onClick="window.location.reload();">Reset</button>
@@ -56,27 +90,18 @@
   <script src="./script.js"></script>
 
 <script>
+
+//äänet 
+
     let sound1 = new Audio();
     sound1.src = "./sound1.mp3"
 
     let sound2 = new Audio();
     sound2.src = "./sound2.mp3"
 
-</script>
+    let sound3 = new Audio();
+    sound3.src = "./sound3.mp3"
 
-<script>
-
-        let result = document.getElementById("right");
- 
-        function changeColor(color) {
-            document.body.style.background = color;
-        }
- 
-        function myFunc() {
-            changeColor('yellow');
-            result.innerHTML = "Background Color changed";
-        }    
-        
 </script>
 
 </body>
